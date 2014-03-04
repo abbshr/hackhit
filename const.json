@@ -1,0 +1,23 @@
+{
+    "CODE_URI" : "http://xscj.hit.edu.cn/hitjwgl/public/captcha.asp",
+    "HIT_SIGN" : "http://xscj.hit.edu.cn/hitjwgl/xs/log.asp",
+    "POST_LOG" : "http://xscj.hit.edu.cn/hitjwgl/xs/Login.asp",
+    "QUERY"    : "http://xscj.hit.edu.cn/hitjwgl/xs/kcxx/CXJG.asp",
+    "login_opt": {
+        "host": "xscj.hit.edu.cn",
+        "method": "POST",
+        "path": "/hitjwgl/xs/Login.asp",
+        "headers": {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Referer": "http://xscj.hit.edu.cn/hitjwgl/xs/log.asp"
+        }
+    },
+    "table_opt": {
+        "host": "xscj.hit.edu.cn",
+        "method": "POST",
+        "path": "/hitjwgl/xs/kcxx/CXJG.asp",
+        "headers": {
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+    }
+}
