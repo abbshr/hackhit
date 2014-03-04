@@ -18,12 +18,10 @@ function router(req, res) {
 }
 
 function go_to_index(req, res) {
-    console.log(req.url);
     http.get(Const.CODE_URI, function (hit_response) {
         // get cookie
         var cookie = hit_response.headers['set-cookie'][0].split(';')[0];
         console.log('cookies got!');
-        console.log('GET:',cookie);
             
         // get code.bmp
         var w_stream = fs.createWriteStream("./code.bmp");
@@ -33,7 +31,7 @@ function go_to_index(req, res) {
         });
         hit_response.on('end', function () {
             w_stream.end();
-            console.log("code image got!");cookie
+            console.log("code image got!");
             // 返回登陆页面
             readfile("./index.html", res, 'text/html', cookie);
         });
@@ -54,7 +52,6 @@ function hacking(req, res) {
         Const.login_opt.headers['Cookie'] = cookie;
         // 向HIT Server发起登陆验证请求
         var proxy_req = http.request(Const.login_opt, function (proxy_res) {
-            console.log(proxy_res.statusCode);
             if (proxy_res.statusCode === 302) {
                 // 请求数据
                 var proxy_req = http.request(Const.table_opt, function (proxy_res) {
@@ -70,7 +67,7 @@ function hacking(req, res) {
                 proxy_req.write("selectXQ=2014%B4%BA%BC%BE&Submit=%B2%E9%D1%AF");
                 proxy_req.end();
             } else {
-                console.log('wrong info!');
+                console.log('input wrong info!');
             }
         });
         proxy_req.write("uid=" + user_data['uid'] 
