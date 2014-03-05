@@ -1,0 +1,467 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>学生选课结果</title>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<link href="../css/xs.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style2 
+{
+	font-size: 12px;
+	font-weight: bold;
+}
+.style2 
+{
+	font-size: 12px;
+}
+-->
+</style>
+</head>
+<SCRIPT TYPE="text/javascript" src="../../public/public.js"></SCRIPT>
+
+<BODY onLoad="if(window.name!=''){document.body.style.width='98%';}">
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<DIV id=top>
+<DIV class=left></DIV>
+<DIV class=center><SPAN>欢迎您：孙焕然　|　1237104　|　<A class=menu 
+href="/Close.asp">退出系统</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></DIV>
+<DIV class=right></DIV>
+<DIV class=space></DIV></DIV>
+<DIV id=head>
+<DIV class=left></DIV>
+<DIV class=center>
+<DIV class=title id=space_title>哈尔滨工业大学</DIV>
+<DIV class=intro id=space_intro>本科生学务管理</DIV></DIV>
+<DIV class=right></DIV>
+<DIV class=space></DIV></DIV>
+<DIV id=menus>
+<DIV class=left></DIV>
+<DIV class=center>
+<UL>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="XK_BX.asp"><SPAN>必修</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="XK_YY.asp"><SPAN>英语拓展</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="XK_XX.asp"><SPAN>限选</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="XK_TY.asp"><SPAN>体育</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="XK_RX.asp"><SPAN>全校任选</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="CXYX_XK.asp"><SPAN>创新研修</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="CXSY_XK.asp"><SPAN>创新实验</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="TSJY_XK.asp"><SPAN>通识教育</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="GCLJ_XK.asp"><SPAN>工程领军</SPAN></A></LI>
+<!-- 
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="XK_WJ.asp"><SPAN>外教</SPAN></A></LI>
+
+//-->
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="JCJQ_XK.asp"><SPAN>基础</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="FXXK.asp"><SPAN>双学位</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="KZYXK.asp"><SPAN>跨专业</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="JLSXK.asp"><SPAN>留学交流旁听</SPAN></A></LI>
+  <LI>&nbsp;</LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="CXJG.asp"><SPAN>选课结果</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="XKGZ.asp"><SPAN>选课规则</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="ZXJH.asp"><SPAN>执行计划</SPAN></A></LI>
+  <LI onMouseOver="this.style.filter='blur(add=true, direction=45, strength=4)';" onMouseOut="this.style.filter='';"><A class=menu href="../main.asp"><SPAN>主菜单</SPAN></A></LI>
+ </UL>
+ </DIV>
+<DIV class=right></DIV>
+<DIV class=space></DIV></DIV>
+
+
+
+<DIV id=spacemain>
+<DIV id=top_style>
+<H2></H2>
+<H1></H1></DIV>
+<DIV class=center>
+<!--  -->
+<table width="920" border="0" cellpadding="0" cellspacing="0" bgcolor="#C1D6DD" align="center">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td><form name="form1" method="post" action="">
+            <table width="28%" border="1" align="right" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><div align="right">选择学期&nbsp;</div></td>
+                <td><div align="center">
+                    <select name="selectXQ" id="selectXQ">
+					<option value=2014夏季 >2014夏季</option><option value=2014春季 selected >2014春季</option><option value=2013秋季 >2013秋季</option><option value=2013春季 >2013春季</option><option value=2012秋季 >2012秋季</option><option value=2012春季 >2012春季</option><option value=2011秋季 >2011秋季</option><option value=2011春季 >2011春季</option><option value=2010秋季 >2010秋季</option><option value=2010春季 >2010春季</option><option value=2009暑期 >2009暑期</option><option value=2009秋季 >2009秋季</option><option value=2009春季 >2009春季</option><option value=2008秋季 >2008秋季</option><option value=2008春季 >2008春季</option><option value=2007秋季 >2007秋季</option><option value=2007春季 >2007春季</option><option value=2006秋季 >2006秋季</option><option value=2006春季 >2006春季</option><option value=2005秋季 >2005秋季</option><option value=2005春季 >2005春季</option><option value=2004秋季 >2004秋季</option><option value=2004春季 >2004春季</option><option value=2003秋季 >2003秋季</option>
+                    </select>
+                </div></td>
+                <td><input type="submit" name="Submit" value="查询" class="input0" onMouseMove="Submit.className='input_on'" onMouseOut="Submit.className='input0'" ></td>
+              </tr>
+            </table>
+          </form></td>
+        </tr>
+      </table>
+	
+<table width="99%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="23"><div align="center">2014春季&nbsp;<span class="style1">必修课</span>&nbsp;选课结果</div></td>
+  </tr>
+</table>  
+      <table width="98%"  border="1" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr bgcolor="C1E7FF">
+          <td height="22"><div align="center" class="style2">课程名</div></td>
+          <td><div align="center" class="style2">授课教师</div></td>
+          <td><div align="center" class="style2">学分</div></td>
+          <td><div align="center" class="style2">学时</div></td>
+          <td><div align="center" class="style2">起止周</div></td>
+          <td><div align="center" class="style2">详细信息</div></td>
+          <td><div align="center" class="style2">上课时间与教室</div></td>
+          <td><div align="center" class="style2">备注</div></td>
+        </tr>
+        
+        <tr onMouseOver="SeeSetBg(this)" onMouseOut="SeeReBg(this)">
+          <td  height="22" ><div align="center">财务管理</div></td>
+          <td><div align="center">彭彦敏</div></td>
+          <td><div align="center">1</div></td>
+          <td><div align="center">16</div></td>
+          <td><div align="center">1-4</div></td>
+	    <td><div align="center">
+    	    <input type="button" name="Submit" value="详细" onClick="javascript:window.open('showXX.asp?kch=04X866/674&jsh=/:54381','newXx','menubar=yes,resizable=yes,scrollBars = yes,ToolBar= yes ')"  class="input0" onMouseMove="Submit.className='input_on'" onMouseOut="Submit.className='input0'" >
+	    </div></td>
+          <td><table width="90%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><div align="left" class="style3">周二3-4节 致知33</div></td>
+              </tr>
+			  
+              <tr>
+                <td><div align="left" class="style3">周四1-2节 致知33</div></td>
+              </tr>
+			  
+         </table></td>
+          <td><div align="center">
+		  &nbsp;
+		  </div></td>
+        </tr>
+        
+        <tr onMouseOver="SeeSetBg(this)" onMouseOut="SeeReBg(this)">
+          <td  height="22" ><div align="center">计算机网络（双语）</div></td>
+          <td><div align="center">李全龙</div></td>
+          <td><div align="center">3</div></td>
+          <td><div align="center">52</div></td>
+          <td><div align="center">8-17</div></td>
+	    <td><div align="center">
+    	    <input type="button" name="Submit" value="详细" onClick="javascript:window.open('showXX.asp?kch=06WH66/34<3/&jsh=0647366','newXx','menubar=yes,resizable=yes,scrollBars = yes,ToolBar= yes ')"  class="input0" onMouseMove="Submit.className='input_on'" onMouseOut="Submit.className='input0'" >
+	    </div></td>
+          <td><table width="90%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><div align="left" class="style3">周一1-2节 致知33</div></td>
+              </tr>
+			  
+              <tr>
+                <td><div align="left" class="style3">周四1-2节 致知33</div></td>
+              </tr>
+			  
+         </table></td>
+          <td><div align="center">
+		  &nbsp;
+		  </div></td>
+        </tr>
+        
+        <tr onMouseOver="SeeSetBg(this)" onMouseOut="SeeReBg(this)">
+          <td  height="22" ><div align="center">面向对象建模技术</div></td>
+          <td><div align="center">吴岩</div></td>
+          <td><div align="center">1</div></td>
+          <td><div align="center">20</div></td>
+          <td><div align="center">7-8</div></td>
+	    <td><div align="center">
+    	    <input type="button" name="Submit" value="详细" onClick="javascript:window.open('showXX.asp?kch=06WG66/3483/&jsh=2:57;8/47;','newXx','menubar=yes,resizable=yes,scrollBars = yes,ToolBar= yes ')"  class="input0" onMouseMove="Submit.className='input_on'" onMouseOut="Submit.className='input0'" >
+	    </div></td>
+          <td><table width="90%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><div align="left" class="style3">周一5-6节 致知33</div></td>
+              </tr>
+			  
+              <tr>
+                <td><div align="left" class="style3">周二5-6节 致知33</div></td>
+              </tr>
+			  
+              <tr>
+                <td><div align="left" class="style3">周三5-6节 致知33</div></td>
+              </tr>
+			  
+              <tr>
+                <td><div align="left" class="style3">周四5-6节 致知33</div></td>
+              </tr>
+			  
+         </table></td>
+          <td><div align="center">
+		  &nbsp;
+		  </div></td>
+        </tr>
+        
+        <tr onMouseOver="SeeSetBg(this)" onMouseOut="SeeReBg(this)">
+          <td  height="22" ><div align="center">数据库系统</div></td>
+          <td><div align="center">刘显敏</div></td>
+          <td><div align="center">3</div></td>
+          <td><div align="center">52</div></td>
+          <td><div align="center">1-7</div></td>
+	    <td><div align="center">
+    	    <input type="button" name="Submit" value="详细" onClick="javascript:window.open('showXX.asp?kch=06WG66/3463/&jsh=2:58S0/357','newXx','menubar=yes,resizable=yes,scrollBars = yes,ToolBar= yes ')"  class="input0" onMouseMove="Submit.className='input_on'" onMouseOut="Submit.className='input0'" >
+	    </div></td>
+          <td><table width="90%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><div align="left" class="style3">周三3-4节 致知33</div></td>
+              </tr>
+			  
+              <tr>
+                <td><div align="left" class="style3">周五3-4节 致知33</div></td>
+              </tr>
+			  
+         </table></td>
+          <td><div align="center">
+		  &nbsp;
+		  </div></td>
+        </tr>
+        
+        <tr onMouseOver="SeeSetBg(this)" onMouseOut="SeeReBg(this)">
+          <td  height="22" ><div align="center">系统分析与设计(双语)</div></td>
+          <td><div align="center">路军</div></td>
+          <td><div align="center">1.5</div></td>
+          <td><div align="center">28</div></td>
+          <td><div align="center">8-8</div></td>
+	    <td><div align="center">
+    	    <input type="button" name="Submit" value="详细" onClick="javascript:window.open('showXX.asp?kch=06WG66/3473/&jsh=077;z/2','newXx','menubar=yes,resizable=yes,scrollBars = yes,ToolBar= yes ')"  class="input0" onMouseMove="Submit.className='input_on'" onMouseOut="Submit.className='input0'" >
+	    </div></td>
+          <td><table width="90%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><div align="left" class="style3">周一3-4节 致知33</div></td>
+              </tr>
+			  
+              <tr>
+                <td><div align="left" class="style3">周六1-2节 致知33</div></td>
+              </tr>
+			  
+              <tr>
+                <td><div align="left" class="style3">周日1-2节 致知33</div></td>
+              </tr>
+			  
+         </table></td>
+          <td><div align="center">
+		  &nbsp;
+		  </div></td>
+        </tr>
+        
+        <tr onMouseOver="SeeSetBg(this)" onMouseOut="SeeReBg(this)">
+          <td  height="22" ><div align="center">运筹学</div></td>
+          <td><div align="center">徐永仁</div></td>
+          <td><div align="center">1.5</div></td>
+          <td><div align="center">28</div></td>
+          <td><div align="center">1-7</div></td>
+	    <td><div align="center">
+    	    <input type="button" name="Submit" value="详细" onClick="javascript:window.open('showXX.asp?kch=06KR66/3473/&jsh=/:54304','newXx','menubar=yes,resizable=yes,scrollBars = yes,ToolBar= yes ')"  class="input0" onMouseMove="Submit.className='input_on'" onMouseOut="Submit.className='input0'" >
+	    </div></td>
+          <td><table width="90%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><div align="left" class="style3">周三3-4节 致知33</div></td>
+              </tr>
+			  
+              <tr>
+                <td><div align="left" class="style3">周五3-4节 致知33</div></td>
+              </tr>
+			  
+         </table></td>
+          <td><div align="center">
+		  &nbsp;
+		  </div></td>
+        </tr>
+        
+      </table>
+
+<br>
+<table width="99%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="23"><div align="center">2014春季&nbsp;<span class="style1">英语拓展课</span>&nbsp;选课结果</div></td>
+  </tr>
+</table>  
+      <table width="98%"  border="1" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr bgcolor="C1E7FF">
+          <td height="22"><div align="center" class="style2">课程名</div></td>
+          <td><div align="center" class="style2">授课教师</div></td>
+          <td><div align="center" class="style2">上课校区</div></td>
+          <td><div align="center" class="style2">学分</div></td>
+          <td><div align="center" class="style2">学时</div></td>
+          <td><div align="center" class="style2">起止周</div></td>
+          <td><div align="center" class="style2">详细信息</div></td>
+          <td><div align="center" class="style2">教学班名</div></td>
+          <td><div align="center" class="style2">上课时间与教室</div></td>
+          <td><div align="center" class="style2">备注</div></td>
+        </tr>
+        
+        <tr onMouseOver="SeeSetBg(this)" onMouseOut="SeeReBg(this)">
+          <td height="22" ><div align="center">英语阅读进阶</div></td>
+          <td><div align="center">张辉</div></td>
+          <td><div align="center">一区</div></td>
+          <td><div align="center">2</div></td>
+          <td><div align="center">32</div></td>
+          <td><div align="center">1-16</div></td>
+	    <td><div align="center">
+    	    <input type="button" name="Submit" value="详细" onClick="javascript:window.open('showXX.asp?kch=03G844/8<4&jsh=/359315','newXx','menubar=yes,resizable=yes,scrollBars = yes,ToolBar= yes ')"  class="input0" onMouseMove="Submit.className='input_on'" onMouseOut="Submit.className='input0'" >
+	    </div></td>
+          <td><div align="center">阅读进阶4班</div></td>
+          <td><table width="90%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><div align="left" class="style3">周四3-4节 正心614</div></td>
+              </tr>
+			  
+         </table></td>
+          <td><div align="center">
+		  &nbsp;
+		  </div></td>
+        </tr>
+        
+      </table>
+
+<br>
+<table width="99%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="23"><div align="center">2014春季&nbsp;<span class="style1">限选课</span>&nbsp;选课结果</div></td>
+  </tr>
+</table>  
+      <table width="98%"  border="1" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr bgcolor="C1E7FF">
+          <td height="22"><div align="center" class="style2">课程名</div></td>
+          <td><div align="center" class="style2">授课教师</div></td>
+          <td><div align="center" class="style2">上课校区</div></td>
+          <td><div align="center" class="style2">学分</div></td>
+          <td><div align="center" class="style2">学时</div></td>
+          <td><div align="center" class="style2">起止周</div></td>
+          <td><div align="center" class="style2">详细信息</div></td>
+          <td><div align="center" class="style2">上课时间与教室</div></td>
+          <td><div align="center" class="style2">备注</div></td>
+        </tr>
+        
+        <tr onMouseOver="SeeSetBg(this)" onMouseOut="SeeReBg(this)">
+          <td height="22" ><div align="center">Java EE应用开发</div></td>
+          <td><div align="center">唐好选</div></td>
+          <td><div align="center">一区</div></td>
+          <td><div align="center">1.5</div></td>
+          <td><div align="center">28</div></td>
+          <td><div align="center">8-14</div></td>
+	    <td><div align="center">
+    	    <input type="button" name="Submit" value="详细" onClick="javascript:window.open('showXX.asp?kch=06WI66/3493/&jsh=8<==<88','newXx','menubar=yes,resizable=yes,scrollBars = yes,ToolBar= yes ')"  class="input0" onMouseMove="Submit.className='input_on'" onMouseOut="Submit.className='input0'" >
+	    </div></td>
+          <td><table width="90%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><div align="left" class="style3">周三1-2节 致知33</div></td>
+              </tr>
+			  
+              <tr>
+                <td><div align="left" class="style3">周五1-2节 致知33</div></td>
+              </tr>
+			  
+         </table></td>
+          <td><div align="center">
+		  &nbsp;
+		  </div></td>
+        </tr>
+        
+      </table>
+	
+<br>
+<table width="99%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="23"><div align="center">2014春季&nbsp;<span class="style1">体育课</span>&nbsp;选课结果</div></td>
+  </tr>
+</table>  
+      <table width="98%" border="1" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr bgcolor="C1E7FF">
+          <td height="22"><div align="center" class="style2">上课项目</div></td>
+          <td><div align="center" class="style2">授课教师</div></td>
+          <td><div align="center" class="style2">上课校区</div></td>
+          <td><div align="center" class="style2">起止周</div></td>
+          <td><div align="center" class="style2">上课时间与教室</div></td>
+        </tr>
+        
+        <tr onMouseOver="SeeSetBg(this)" onMouseOut="SeeReBg(this)">
+          <td height="22" ><div align="center">健美</div></td>
+          <td><div align="center">陶永纯</div></td>
+          <td><div align="center">一区</div></td>
+          <td><div align="center">1-15</div></td>
+          <td><table width="90%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><div align="left" class="style3">周二1-2节 </div></td>
+              </tr>
+			  
+         </table></td>
+        </tr>
+        
+      </table>
+
+<br>
+      <table width="99%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><div align="center">2014春季&nbsp;<span class="style1">全校任选课</span>&nbsp;选课结果</div></td>
+        </tr>
+      </table>
+      <table width="98%" border="1" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr bgcolor="C1E7FF">
+          <td  height="22" ><div align="center" class="style2">课程名</div></td>
+          <td><div align="center" class="style2">授课教师</div></td>
+          <td><div align="center" class="style2">上课校区</div></td>
+          <td><div align="center" class="style2">学分</div></td>
+          <td><div align="center" class="style2">学时</div></td>
+          <td><div align="center" class="style2">起止周</div></td>
+          <td><div align="center" class="style2">详细信息</div></td>
+          <td><div align="center" class="style2">上课时间与教室</div></td>
+        </tr>
+        
+        <tr onMouseOver="SeeSetBg(this)" onMouseOut="SeeReBg(this)">
+          <td height="22" ><div align="center">计算机网络安全技术</div></td>
+          <td><div align="center">张玥</div></td>
+          <td><div align="center">
+		    一区
+	      </div></td>
+          <td><div align="center">2</div></td>
+          <td><div align="center">40</div></td>
+          <td><div align="center">2-13</div></td>
+	    <td><div align="center">
+    	    <input type="button" name="Submit" value="详细" onClick="javascript:window.open('showXX.asp?kch=FR446//544&jsh=0647;25','newXx','menubar=yes,resizable=yes,scrollBars = yes,ToolBar= yes ')"  class="input0" onMouseMove="Submit.className='input_on'" onMouseOut="Submit.className='input0'" >
+	    </div></td>
+          <td><table width="90%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><div align="left" class="style3">周日1-4节 正心220</div></td>
+              </tr>
+			  
+         </table></td>
+        </tr>
+        
+      </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<br />
+<br />
+<!--  -->
+  <DIV class=space></DIV></DIV></DIV>
+<DIV id=bot_style>
+<H2></H2>
+<H1></H1></DIV>
+<script src="../css/foot.js"></script>
+</BODY></HTML>
