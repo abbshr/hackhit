@@ -7,10 +7,26 @@ module.exports = router;
 
 function router(req, res) {
     if (req.method === 'GET')
-    if (req.url === '/')
-    go_to_index(req, res);
-    else if (req.url === '/code.bmp')
-    readfile('./code.bmp', res, 'image/bmp', 'code=code');
+    switch (req.url) {
+        case '/':
+            go_to_index(req, res);
+            return;
+        case '/score1':
+            get_page(req, res, 'FIRST');
+            return;
+        case '/score2':
+            get_page(req, res, 'SECOND');
+            return;
+        case '/hang':
+            get_page(req, res, 'HANG');
+            return;
+        case '/table':
+            post_table(req, res);
+            return; 
+        case '/code.bmp':
+            readfile('./code.bmp', res, 'image/bmp', 'code=code');
+            return;
+    }
     
     if (req.method === 'POST')
     if (req.headers['transfer-encoding'] || req.headers['content-length'])
@@ -22,7 +38,7 @@ function go_to_index(req, res) {
         // get cookie
         var cookie = hit_response.headers['set-cookie'][0].split(';')[0];
         console.log('cookies got!');
-            
+        console.log('code.bmp: ', cookie);    
         // get code.bmp
         var w_stream = fs.createWriteStream("./code.bmp");
             
@@ -33,7 +49,7 @@ function go_to_index(req, res) {
             w_stream.end();
             console.log("code image got!");
             // 返回登陆页面
-            readfile("./index.html", res, 'text/html', cookie);
+            readfile("./login.html", res, 'text/html', cookie);
         });
     });
 }
@@ -48,26 +64,15 @@ function hacking(req, res) {
         var user_data = querystr.parse(raw);
         console.log('user\'s informations got! now pushing to HIT Server');
         var cookie = req.headers.cookie;
-        Const.table_opt.headers['Cookie'] = cookie;
         Const.login_opt.headers['Cookie'] = cookie;
         // 向HIT Server发起登陆验证请求
         var proxy_req = http.request(Const.login_opt, function (proxy_res) {
             if (proxy_res.statusCode === 302) {
-                // 请求数据
-                var proxy_req = http.request(Const.table_opt, function (proxy_res) {
-                    var w_stream = fs.createWriteStream('./result.html');
-                    proxy_res.on('data', function (data) {
-                        w_stream.write(data);
-                    });
-                    proxy_res.on('end', function () {
-                        w_stream.end();
-                        readfile('./result.html', res, 'text/html', cookie);
-                    });
-                });
-                proxy_req.write("selectXQ=2014%B4%BA%BC%BE&Submit=%B2%E9%D1%AF");
-                proxy_req.end();
+                console.log('Authenticate successful!');
+                readfile('./index.html', res, 'text/html', cookie);
             } else {
-                console.log('input wrong info!');
+                console.log('Authenticate failed!');
+                res.end('Authenticate failed!');
             }
         });
         proxy_req.write("uid=" + user_data['uid'] 
@@ -77,6 +82,58 @@ function hacking(req, res) {
         );
         proxy_req.end();
     });
+}
+
+function get_page(req, res, des) {
+    var cookie = req.headers.cookie;
+    console.log(des + ' :', cookie);
+    var opt = {
+        "host": "xscj.hit.edu.cn",
+        "method": "GET",
+        "path": "/hitjwgl/xs/cjcx/" + Const[des],
+        "headers": {
+            "Referer": Const['REFERER'],
+            "Cookie": cookie
+        }
+    };  
+    http.request(opt, function (hit_response) {
+        if (hit_response.statusCode === 200) {
+            var w_stream = fs.createWriteStream(des + '.html');
+            hit_response.on('data', function (data) {
+                w_stream.write(data);
+            });
+            hit_response.on('end', function () {
+                w_stream.end();
+                readfile(des + '.html', res, 'text/html', cookie);
+            });
+        } else {
+            console.log('Problem happens during authentication!');
+            res.end('Problem happens during authentication!');
+        }
+    });
+}
+
+function post_table(req, res) {
+    var cookie = req.headers.cookie;
+    Const.table_opt.headers['Cookie'] = cookie;
+    var proxy_req = http.request(Const.table_opt, function (proxy_res) {
+        if (proxy_res.statusCode === 200) {
+            var w_stream = fs.createWriteStream('./table.html');
+            proxy_res.on('data', function (data) {
+                w_stream.write(data);
+            });
+            proxy_res.on('end', function () {
+                console.log('table.html got!');
+                w_stream.end();
+                readfile('./table.html', res, 'text/html', cookie);
+            });
+        } else {
+            console.log('Problem happens during authentication!');
+            res.end('Problem happens during authentication!');
+        }
+    });
+    proxy_req.write("selectXQ=2014%B4%BA%BC%BE&Submit=%B2%E9%D1%AF");
+    proxy_req.end();
 }
 
 function readfile(path, res, type, cookie) {

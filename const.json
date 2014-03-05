@@ -3,6 +3,10 @@
     "HIT_SIGN" : "http://xscj.hit.edu.cn/hitjwgl/xs/log.asp",
     "POST_LOG" : "http://xscj.hit.edu.cn/hitjwgl/xs/Login.asp",
     "QUERY"    : "http://xscj.hit.edu.cn/hitjwgl/xs/kcxx/CXJG.asp",
+    "REFERER"  : "http://xscj.hit.edu.cn/hitjwgl/xs/cjcx/cx.asp",
+    "FIRST"    : "CX_1.asp?LB=1",
+    "HANG"     : "CX_GK.asp",
+    "SECOND"   : "CX_1.asp?LB=2",
     "login_opt": {
         "host": "xscj.hit.edu.cn",
         "method": "POST",
