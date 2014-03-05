@@ -1,0 +1,16 @@
+  host: 'localhost:3000',
+  connection: 'keep-alive',
+  'content-length': '38',
+  accept: '*/*',
+  origin: 'http://localhost:3000',
+  'x-requested-with': 'XMLHttpRequest',
+  'user-agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36',
+  'content-type': 'application/x-www-form-urlencoded',
+  referer: 'http://localhost:3000/',
+  'accept-encoding': 'gzip,deflate,sdch',
+  'accept-language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4' 
+
+
+  body: 'stuNumber=1120310617&password=19940126'
+
+  
