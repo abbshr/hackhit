@@ -10,27 +10,29 @@ function router(req, res) {
     switch (req.url) {
         case '/':
             go_to_index(req, res);
-            return;
+            break;
         case '/score1':
             get_page(req, res, 'FIRST');
-            return;
+            break;
         case '/score2':
             get_page(req, res, 'SECOND');
-            return;
+            break;
         case '/hang':
             get_page(req, res, 'HANG');
-            return;
+            break;
         case '/table':
             post_table(req, res);
-            return; 
+            break; 
         case '/code.bmp':
             readfile('./code.bmp', res, 'image/bmp', 'code=code');
-            return;
+            break;
+        default:
+            res.end('');
     }
     
     if (req.method === 'POST')
     if (req.headers['transfer-encoding'] || req.headers['content-length'])
-    hacking(req, res);
+        hacking(req, res);
 }
 
 function go_to_index(req, res) {
@@ -38,7 +40,6 @@ function go_to_index(req, res) {
         // get cookie
         var cookie = hit_response.headers['set-cookie'][0].split(';')[0];
         console.log('cookies got!');
-        console.log('code.bmp: ', cookie);    
         // get code.bmp
         var w_stream = fs.createWriteStream("./code.bmp");
             
@@ -47,9 +48,11 @@ function go_to_index(req, res) {
         });
         hit_response.on('end', function () {
             w_stream.end();
-            console.log("code image got!");
-            // 返回登陆页面
-            readfile("./login.html", res, 'text/html', cookie);
+            w_stream.on('finish', function () {
+                console.log("code image got!");
+                // 返回登陆页面
+                readfile("./login.html", res, 'text/html', cookie);
+            });
         });
     });
 }
@@ -63,7 +66,8 @@ function hacking(req, res) {
         raw = Buffer.concat(raw).toString();
         var user_data = querystr.parse(raw);
         console.log('user\'s informations got! now pushing to HIT Server');
-        var cookie = req.headers.cookie;
+        var cookie = req.headers.cookie.split(';')[0];
+        console.log(cookie);
         Const.login_opt.headers['Cookie'] = cookie;
         // 向HIT Server发起登陆验证请求
         var proxy_req = http.request(Const.login_opt, function (proxy_res) {
@@ -85,18 +89,17 @@ function hacking(req, res) {
 }
 
 function get_page(req, res, des) {
-    var cookie = req.headers.cookie;
+    var cookie = req.headers.cookie.split(';')[1];
     console.log(des + ' :', cookie);
     var opt = {
         "host": "xscj.hit.edu.cn",
         "method": "GET",
         "path": "/hitjwgl/xs/cjcx/" + Const[des],
         "headers": {
-            "Referer": Const['REFERER'],
             "Cookie": cookie
         }
     };  
-    http.request(opt, function (hit_response) {
+    var proxy_req = http.request(opt, function (hit_response) {
         if (hit_response.statusCode === 200) {
             var w_stream = fs.createWriteStream(des + '.html');
             hit_response.on('data', function (data) {
@@ -104,13 +107,16 @@ function get_page(req, res, des) {
             });
             hit_response.on('end', function () {
                 w_stream.end();
-                readfile(des + '.html', res, 'text/html', cookie);
+                w_stream.on('finish', function () {
+                    readfile(des + '.html', res, 'text/html', cookie);
+                });
             });
         } else {
             console.log('Problem happens during authentication!');
             res.end('Problem happens during authentication!');
         }
     });
+    proxy_req.end();
 }
 
 function post_table(req, res) {
