@@ -1,5 +1,5 @@
 /* fuck HIT Server-Proxy */
-/*      beta v0.0.1      */
+/*      beta v0.1.1      */
 
 var http   = require('http');
 var router = require('./router.js');
