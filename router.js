@@ -24,7 +24,7 @@ function router(req, res) {
             post_table(req, res);
             break; 
         case '/code.bmp':
-            readfile('./code.bmp', res, 'image/bmp', 'code=code');
+            get_code(req, res);
             break;
         default:
             res.end('');
@@ -36,23 +36,25 @@ function router(req, res) {
 }
 
 function go_to_index(req, res) {
+    readfile('./login.html', res, 'text/html', '');
+}
+
+function get_code(req, res) {
     http.get(Const.CODE_URI, function (hit_response) {
+        var cookie = hit_response.headers['set-cookie'][0].split(';')[0];
         // get cookie
         var cookie = hit_response.headers['set-cookie'][0].split(';')[0];
         console.log('cookies got!');
+        res.setHeader('Content-Type', 'image/bmp');
+        res.setHeader('Set-Cookie', cookie);
+        res.writeHead(200, 'OK');
         // get code.bmp
-        var w_stream = fs.createWriteStream("./code.bmp");
-            
         hit_response.on('data', function (data) {
-            w_stream.write(data);
+            res.write(data);
         });
         hit_response.on('end', function () {
-            w_stream.end();
-            w_stream.on('finish', function () {
-                console.log("code image got!");
-                // 返回登陆页面
-                readfile("./login.html", res, 'text/html', cookie);
-            });
+            res.end();
+            console.log("code image got!");
         });
     });
 }
@@ -101,15 +103,14 @@ function get_page(req, res, des) {
     };  
     var proxy_req = http.request(opt, function (hit_response) {
         if (hit_response.statusCode === 200) {
-            var w_stream = fs.createWriteStream(des + '.html');
+            res.setHeader('Content-Type', 'text/html');
+            res.setHeader('Set-Cookie', cookie);
+            res.writeHead(200, 'OK');
             hit_response.on('data', function (data) {
-                w_stream.write(data);
+                res.write(data);
             });
             hit_response.on('end', function () {
-                w_stream.end();
-                w_stream.on('finish', function () {
-                    readfile(des + '.html', res, 'text/html', cookie);
-                });
+                res.end();
             });
         } else {
             console.log('Problem happens during authentication!');
@@ -124,14 +125,15 @@ function post_table(req, res) {
     Const.table_opt.headers['Cookie'] = cookie;
     var proxy_req = http.request(Const.table_opt, function (proxy_res) {
         if (proxy_res.statusCode === 200) {
-            var w_stream = fs.createWriteStream('./table.html');
+            res.setHeader('Content-Type', 'text/html');
+            res.setHeader('Set-Cookie', cookie);
+            res.writeHead(200, 'OK');
             proxy_res.on('data', function (data) {
-                w_stream.write(data);
+                res.write(data);
             });
             proxy_res.on('end', function () {
                 console.log('table.html got!');
-                w_stream.end();
-                readfile('./table.html', res, 'text/html', cookie);
+                res.end();
             });
         } else {
             console.log('Problem happens during authentication!');
