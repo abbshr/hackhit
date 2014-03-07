@@ -66,7 +66,7 @@ function hacking(req, res) {
         raw = Buffer.concat(raw).toString();
         var user_data = querystr.parse(raw);
         console.log('user\'s informations got! now pushing to HIT Server');
-        var cookie = req.headers.cookie.split(';')[0];
+        var cookie = req.headers.cookie;
         console.log(cookie);
         Const.login_opt.headers['Cookie'] = cookie;
         // 向HIT Server发起登陆验证请求
@@ -89,7 +89,7 @@ function hacking(req, res) {
 }
 
 function get_page(req, res, des) {
-    var cookie = req.headers.cookie.split(';')[1];
+    var cookie = req.headers.cookie;
     console.log(des + ' :', cookie);
     var opt = {
         "host": "xscj.hit.edu.cn",
