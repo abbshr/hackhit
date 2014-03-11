@@ -41,7 +41,6 @@ function go_to_index(req, res) {
 
 function get_code(req, res) {
     http.get(Const.CODE_URI, function (hit_response) {
-        var cookie = hit_response.headers['set-cookie'][0].split(';')[0];
         // get cookie
         var cookie = hit_response.headers['set-cookie'][0].split(';')[0];
         console.log('cookies got!');
