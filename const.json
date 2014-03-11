@@ -7,6 +7,7 @@
     "FIRST"    : "CX_1.asp?LB=1",
     "HANG"     : "CX_GK.asp",
     "SECOND"   : "CX_1.asp?LB=2",
+    "PORT"     : 9000,
     "login_opt": {
         "host": "xscj.hit.edu.cn",
         "method": "POST",
